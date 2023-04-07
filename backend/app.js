@@ -16,8 +16,8 @@ app.use('/api/v1/user', require('./routes/userRoutes'));
 
 const PORT = process.env.PORT;
 
-app.get("/demo",(req,res)=>{
-    res.send("Demo page");
+app.get("/",(req,res)=>{
+    res.send("Home page");
 })
 
 
