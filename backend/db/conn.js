@@ -1,7 +1,8 @@
 const mongoose =require("mongoose");
 
+    const DB = process.env.DB;
 
-    mongoose.connect("mongodb+srv://aditya:Adi%4012345@cluster0.2i7nz9s.mongodb.net/taskNode?retryWrites=true&w=majority",{
+    mongoose.connect(DB,{
         useNewUrlParser:true,useUnifiedTopology:true
     }).then(()=>{
     console.log("DB Connected Successfully");

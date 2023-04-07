@@ -25,14 +25,14 @@ const getPosts = async (req, res) => {
 
 const deletePost = async (req, res) => {
   try {
-    const post = await Post.findOne({
+    const post = await Post.findOneAndRemove({
       _id: req.params.id,
       createdBy: req.user._id,
     });
     if (!post) {
       return res.status(404).json({ message: 'Post not found' });
     }
-    await post.remove();
+    
     res.status(200).json({ message: 'Post deleted successfully' });
   } catch (error) {
     res.status(500).json({ message: 'Internal server error' });

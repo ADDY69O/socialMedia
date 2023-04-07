@@ -16,6 +16,11 @@ app.use('/api/v1/user', require('./routes/userRoutes'));
 
 const PORT = process.env.PORT;
 
+app.get("/demo",(req,res)=>{
+    res.send("Demo page");
+})
+
+
 app.listen(PORT,(req,res)=>{
    
     console.log(`app is listening on ${PORT}`)

@@ -37,7 +37,7 @@ const updateUser =  async(req, res, next)=>{
 
 
     if(!user){
-        return res.status(400).json({message:"Product not found"});
+        return res.status(400).json({message:"User not found"});
         
     }
 
@@ -48,7 +48,7 @@ const updateUser =  async(req, res, next)=>{
    }
    )
     
-   return  res.status(200).json({success:"true",message:"updated the product",user});
+   return  res.status(200).json({success:"true",message:"updated the user",user});
 
 
 
@@ -84,7 +84,7 @@ const login=async(req,res)=>{
         
         }
           
-          res.status(200).json({success:"true",message:"Successfully Deleted the product"});
+          res.status(200).json({success:"true",message:"Successfully Deleted the user"});
      
       
       

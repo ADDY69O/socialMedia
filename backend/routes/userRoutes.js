@@ -3,6 +3,7 @@ const {Router} = require('express')
 
 const {createUser, login, deleteUser, updateUser} = require("../controllers/userControllers")
 
+const protect = require('../middleware/protect');
 const router= express.Router();
 
 // router.get('/',async(req,res)=>{
@@ -12,7 +13,7 @@ const router= express.Router();
 
 router.route('/').post(createUser);
 router.route('/login').post(login);
-router.route("/products/:id").put(updateUser);
-router.route("/products/:id").delete(deleteUser);
+router.route("/log/:id").put(protect,updateUser);
+router.route("/log/:id").delete(protect,deleteUser);
 
 module.exports=router;
